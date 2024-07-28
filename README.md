@@ -10,6 +10,9 @@ The calculateSequenceEntropy(sequence) implements this formula. It calculates th
 entropy = -∑ pᵢ * log₂(pᵢ)
 where pᵢ is the probability of each unique character in the sequence.
 
-
 1)	Shannon, C.E. (1948) A Mathematical Theory of Communication. Bell System Technical Journal, 27, 379-423. http://dx.doi.org/10.1002/j.1538-7305.1948.tb01338.x
 2)	Daly, A. J., Baetens, J. M., & De Baets, B. (2018). Ecological diversity: measuring the unmeasurable. Mathematics, 6(7), 119.
+
+
+# Please cite:
+1)	Shannon, C.E. (1948) A Mathematical Theory of Communication. Bell System Technical Journal, 27, 379-423. http://dx.doi.org/10.1002/j.1538-7305.1948.tb01338.x
