@@ -1,113 +1,96 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2487.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
-    span.s1 {font-kerning: none}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sequence Entropy Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f0f8ff; /* Light blue background */
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
-<p class="p1"><span class="s1">&lt;html lang="en"&gt;</span></p>
-<p class="p1"><span class="s1">&lt;head&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Sequence Entropy Calculator&lt;/title&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;style&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>body {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>max-width: 800px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin: 0 auto;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #f0f8ff; /* Light blue background */</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>textarea {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>width: 100%;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>height: 100px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>button {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>padding: 10px 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>background-color: #4CAF50;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>color: white;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>border: none;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>cursor: pointer;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>#results {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>margin-top: 20px;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
-<p class="p1"><span class="s1">&lt;body&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Sequence Entropy Calculator&lt;/h1&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;label for="canonical"&gt;Canonical Sequence (c1):&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;textarea id="canonical" placeholder="Enter canonical sequence"&gt;&lt;/textarea&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="user-sequences"&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;label for="s1"&gt;Sequence 1 (s1):&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;textarea id="s1" placeholder="Enter sequence 1"&gt;&lt;/textarea&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button onclick="addSequence()"&gt;Add Another Sequence&lt;/button&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button onclick="calculateEntropy()"&gt;Calculate Entropy&lt;/button&gt;</span></p>
-<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span></span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="results"&gt;&lt;/div&gt;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;script&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>let sequenceCount = 1;</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function addSequence() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>sequenceCount++;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const newSeq = document.createElement('div');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>newSeq.innerHTML = `</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;label for="s${sequenceCount}"&gt;Sequence ${sequenceCount} (s${sequenceCount}):&lt;/label&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>&lt;textarea id="s${sequenceCount}" placeholder="Enter sequence ${sequenceCount}"&gt;&lt;/textarea&gt;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>document.getElementById('user-sequences').appendChild(newSeq);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function calculateEntropy() {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const sequences = [];</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>sequences.push(document.getElementById('canonical').value);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>for (let i = 1; i &lt;= sequenceCount; i++) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>sequences.push(document.getElementById(`s${i}`).value);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const entropies = sequences.map(calculateSequenceEntropy);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>displayResults(entropies);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function calculateSequenceEntropy(sequence) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const counts = {};</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>for (let char of sequence) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>counts[char] = (counts[char] || 0) + 1;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const probabilities = Object.values(counts).map(count =&gt; count / sequence.length);</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const entropy = -probabilities.reduce((sum, p) =&gt; sum + p * Math.log2(p), 0);</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>return entropy;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>function displayResults(entropies) {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>const resultsDiv = document.getElementById('results');</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>resultsDiv.innerHTML = '&lt;h2&gt;Results:&lt;/h2&gt;';</span></p>
-<p class="p2"><span class="s1"></span><br></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>entropies.forEach((entropy, index) =&gt; {</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>const sequenceName = index === 0 ? 'Canonical (c1)' : `s${index}`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">                </span>resultsDiv.innerHTML += `&lt;p&gt;${sequenceName}: ${entropy.toFixed(4)}&lt;/p&gt;`;</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">            </span>});</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
-<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
-<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+    <h1>Sequence Entropy Calculator</h1>
+    
+    <label for="canonical">Canonical Sequence (c1):</label>
+    <textarea id="canonical" placeholder="Enter canonical sequence"></textarea>
+    
+    <div id="user-sequences">
+        <label for="s1">Sequence 1 (s1):</label>
+        <textarea id="s1" placeholder="Enter sequence 1"></textarea>
+    </div>
+    
+    <button onclick="addSequence()">Add Another Sequence</button>
+    <button onclick="calculateEntropy()">Calculate Entropy</button>
+    
+    <div id="results"></div>
+
+    <script>
+        let sequenceCount = 1;
+
+        function addSequence() {
+            sequenceCount++;
+            const newSeq = document.createElement('div');
+            newSeq.innerHTML = `
+                <label for="s${sequenceCount}">Sequence ${sequenceCount} (s${sequenceCount}):</label>
+                <textarea id="s${sequenceCount}" placeholder="Enter sequence ${sequenceCount}"></textarea>
+            `;
+            document.getElementById('user-sequences').appendChild(newSeq);
+        }
+
+        function calculateEntropy() {
+            const sequences = [];
+            sequences.push(document.getElementById('canonical').value);
+            for (let i = 1; i <= sequenceCount; i++) {
+                sequences.push(document.getElementById(`s${i}`).value);
+            }
+
+            const entropies = sequences.map(calculateSequenceEntropy);
+
+            displayResults(entropies);
+        }
+
+        function calculateSequenceEntropy(sequence) {
+            const counts = {};
+            for (let char of sequence) {
+                counts[char] = (counts[char] || 0) + 1;
+            }
+
+            const probabilities = Object.values(counts).map(count => count / sequence.length);
+            const entropy = -probabilities.reduce((sum, p) => sum + p * Math.log2(p), 0);
+
+            return entropy;
+        }
+
+        function displayResults(entropies) {
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = '<h2>Results:</h2>';
+
+            entropies.forEach((entropy, index) => {
+                const sequenceName = index === 0 ? 'Canonical (c1)' : `s${index}`;
+                resultsDiv.innerHTML += `<p>${sequenceName}: ${entropy.toFixed(4)}</p>`;
+            });
+        }
+    </script>
 </body>
 </html>
