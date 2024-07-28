@@ -16,3 +16,7 @@ where pᵢ is the probability of each unique character in the sequence.
 
 # Please cite:
 1)	Shannon, C.E. (1948) A Mathematical Theory of Communication. Bell System Technical Journal, 27, 379-423. http://dx.doi.org/10.1002/j.1538-7305.1948.tb01338.x
+
+# Please also cite, if you used py or ipynb:
+Harris, C.R., Millman, K.J., van der Walt, S.J. et al. Array programming with NumPy. Nature 585, 357–362 (2020). DOI: 10.1038/s41586-020-2649-2.
+
